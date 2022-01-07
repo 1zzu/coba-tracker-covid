@@ -2,70 +2,59 @@ import logo from './logo.svg';
 import './App.css';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Fragment } from 'react';
+import { Helmet } from 'react-helmet';
+import Aos from 'aos';
 
 function App() {
+  Aos.init();
   return (
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       Edit <code>src/App.js</code> and save to reload.
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    // </div>
-    <>
-      {/* <div> */}
-        {/* ======= Header ======= */}
-        <header id="header" className="header fixed-top">
-          <div className="container-fluid container-xl d-flex align-items-center justify-content-between">
-            <p className="logo d-flex align-items-center">
-              <img src="assets/img/logo.png" alt />
-              <span>Protect Care</span>
-            </p>
-            <nav id="navbar" className="navbar">
-              <ul>
-                <li><a className="nav-link scrollto active" href="#hero">Beranda</a></li>
-                <li><a className="nav-link scrollto" href="#about">Vaksinasi</a></li>
-                <li><a className="nav-link scrollto" href="#counts">Penyebaran</a></li>
-                <li><a className="nav-link scrollto" href="#contact">kontak</a></li>
-                <li><a className="getstarted scrollto" href="#about">Daftar</a></li>
-              </ul>
-              <i className="bi bi-list mobile-nav-toggle" />
-            </nav>{/* .navbar */}
-          </div>
-        </header>{/* End Header */}
-        {/* ======= Hero Section ======= */}
-        <section id="hero" className="hero d-flex align-items-center">
-          <div className="container">
-            <div className="row">
-              <div className="col-lg-6 d-flex flex-column justify-content-center">
-                <h1 data-aos="fade-up">Lawan covid-19 dengan vaksinasi</h1>
-                <h4 data-aos="fade-up" data-aos-delay={400}>Bersama kita sukseskan vaksinasi covid-19 bagi semua kalangan</h4>
-                <div data-aos="fade-up" data-aos-delay={600}>
-                  <div className="text-center text-lg-start">
-                    <a href="#about" className="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
-                      <span>Get Started</span>
-                      <i className="bi bi-arrow-right" />
-                    </a>
-                  </div>
+    <Fragment>
+      {/* ======= Header ======= */}
+      <header id="header" className="header fixed-top">
+        <div className="container-fluid container-xl d-flex align-items-center justify-content-between">
+          <p className="logo d-flex align-items-center">
+            <img src="assets/img/logo.png" alt="Logo" />
+            <span>Protect Care</span>
+          </p>
+          <nav id="navbar" className="navbar">
+            <ul>
+              <li><a className="nav-link scrollto active" href="#hero">Beranda</a></li>
+              <li><a className="nav-link scrollto" href="#about">Vaksinasi</a></li>
+              <li><a className="nav-link scrollto" href="#counts">Penyebaran</a></li>
+              <li><a className="nav-link scrollto" href="#contact">Kontak</a></li>
+              <li><a className="getstarted scrollto" href="#about">Daftar</a></li>
+            </ul>
+            <i className="bi bi-list mobile-nav-toggle" />
+          </nav>{/* .navbar */}
+        </div>
+      </header>{/* End Header */}
+      
+      {/* ======= Hero Section ======= */}
+      <section id="hero" className="hero d-flex align-items-center">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-6 d-flex flex-column justify-content-center">
+              <h1 data-aos="fade-up">Lawan covid-19 dengan vaksinasi</h1>
+              <h4 data-aos="fade-up" data-aos-delay={400}>Bersama kita sukseskan vaksinasi covid-19 bagi semua kalangan</h4>
+              <div data-aos="fade-up" data-aos-delay={600}>
+                <div className="text-center text-lg-start">
+                  <a href="#about" className="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                    <span>Get Started</span>
+                    <i className="bi bi-arrow-right" />
+                  </a>
                 </div>
               </div>
-              <div className="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay={200}>
-                {/* <img src="assets/img/hero-img.png" class="img-fluid" alt=""> */}
-                <img src="https://sman3tamsel.sch.id/wp-content/uploads/2021/09/hero.png" className="img-fluid" alt />
-              </div>
+            </div>
+            <div className="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay={200}>
+              {/* <img src="assets/img/hero-img.png" class="img-fluid" alt=""> */}
+              <img src="https://sman3tamsel.sch.id/wp-content/uploads/2021/09/hero.png" className="img-fluid" alt />
             </div>
           </div>
-        </section>{/* End Hero */}
-        <main id="main">
+        </div>
+      </section>
+      {/* End Hero */}
+    
+      <main id="main">
           {/* ======= About Section ======= */}
           <section id="about" className="about">
             <div className="container" data-aos="fade-up">
@@ -492,90 +481,101 @@ function App() {
               </div>
             </div>
           </section>{/* End Contact Section */}
-        </main>{/* End #main */}
-        {/* ======= Footer ======= */}
-        <footer id="footer" className="footer">
-          <div className="footer-newsletter">
-            <div className="container">
-              <div className="row justify-content-center">
-                <div className="col-lg-12 text-center">
-                  <h4>Our Newsletter</h4>
-                  <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-                </div>
-                <div className="col-lg-6">
-                  <form action method="post">
-                    <input type="email" name="email" /><input type="submit" defaultValue="Subscribe" />
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="footer-top">
-            <div className="container">
-              <div className="row gy-4">
-                <div className="col-lg-5 col-md-12 footer-info">
-                  <a href="index.html" className="logo d-flex align-items-center">
-                    <img src="assets/img/logo.png" alt />
-                    <span>Protect Care</span>
-                  </a>
-                  <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
-                  <div className="social-links mt-3">
-                    <a href="#" className="twitter"><i className="bi bi-twitter" /></a>
-                    <a href="#" className="facebook"><i className="bi bi-facebook" /></a>
-                    <a href="#" className="instagram"><i className="bi bi-instagram" /></a>
-                    <a href="#" className="linkedin"><i className="bi bi-linkedin" /></a>
-                  </div>
-                </div>
-                <div className="col-lg-2 col-6 footer-links">
-                  <h4>Useful Links</h4>
-                  <ul>
-                    <li><i className="bi bi-chevron-right" /> <a href="#">Home</a></li>
-                    <li><i className="bi bi-chevron-right" /> <a href="#">About us</a></li>
-                    <li><i className="bi bi-chevron-right" /> <a href="#">Services</a></li>
-                    <li><i className="bi bi-chevron-right" /> <a href="#">Terms of service</a></li>
-                    <li><i className="bi bi-chevron-right" /> <a href="#">Privacy policy</a></li>
-                  </ul>
-                </div>
-                <div className="col-lg-2 col-6 footer-links">
-                  <h4>Our Services</h4>
-                  <ul>
-                    <li><i className="bi bi-chevron-right" /> <a href="#">Web Design</a></li>
-                    <li><i className="bi bi-chevron-right" /> <a href="#">Web Development</a></li>
-                    <li><i className="bi bi-chevron-right" /> <a href="#">Product Management</a></li>
-                    <li><i className="bi bi-chevron-right" /> <a href="#">Marketing</a></li>
-                    <li><i className="bi bi-chevron-right" /> <a href="#">Graphic Design</a></li>
-                  </ul>
-                </div>
-                <div className="col-lg-3 col-md-12 footer-contact text-center text-md-start">
-                  <h4>Contact Us</h4>
-                  <p>
-                    A108 Adam Street <br />
-                    New York, NY 535022<br />
-                    United States <br /><br />
-                    <strong>Phone:</strong> +1 5589 55488 55<br />
-                    <strong>Email:</strong> info@example.com<br />
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+      </main>{/* End #main */}
+    
+      {/* ======= Footer ======= */}
+      <footer id="footer" className="footer">
+        <div className="footer-newsletter">
           <div className="container">
-            <div className="copyright">
-              © Copyright <strong><span>Protect Care</span></strong>. All Rights Reserved
-            </div>
-            <div className="credits">
-              {/* All the links in the footer should remain intact. */}
-              {/* You can delete the links only if you purchased the pro version. */}
-              {/* Licensing information: https://bootstrapmade.com/license/ */}
-              {/* Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/Protect Care-bootstrap-startup-template/ */}
-              Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            <div className="row justify-content-center">
+              <div className="col-lg-12 text-center">
+                <h4>Our Newsletter</h4>
+                <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+              </div>
+              <div className="col-lg-6">
+                <form action method="post">
+                  <input type="email" name="email" /><input type="submit" defaultValue="Subscribe" />
+                </form>
+              </div>
             </div>
           </div>
-        </footer>{/* End Footer */}
-        <a href="#" className="back-to-top d-flex align-items-center justify-content-center"><i className="bi bi-arrow-up-short" /></a>
-      {/* </div> */}
+        </div>
+        <div className="footer-top">
+          <div className="container">
+            <div className="row gy-4">
+              <div className="col-lg-5 col-md-12 footer-info">
+                <a href="index.html" className="logo d-flex align-items-center">
+                  <img src="assets/img/logo.png" alt="Cover" />
+                  <span>Protect Care</span>
+                </a>
+                <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+                <div className="social-links mt-3">
+                  <a href="#" className="twitter"><i className="bi bi-twitter" /></a>
+                  <a href="#" className="facebook"><i className="bi bi-facebook" /></a>
+                  <a href="#" className="instagram"><i className="bi bi-instagram" /></a>
+                  <a href="#" className="linkedin"><i className="bi bi-linkedin" /></a>
+                </div>
+              </div>
+              <div className="col-lg-2 col-6 footer-links">
+                <h4>Useful Links</h4>
+                <ul>
+                  <li><i className="bi bi-chevron-right" /> <a href="#">Home</a></li>
+                  <li><i className="bi bi-chevron-right" /> <a href="#">About us</a></li>
+                  <li><i className="bi bi-chevron-right" /> <a href="#">Services</a></li>
+                  <li><i className="bi bi-chevron-right" /> <a href="#">Terms of service</a></li>
+                  <li><i className="bi bi-chevron-right" /> <a href="#">Privacy policy</a></li>
+                </ul>
+              </div>
+              <div className="col-lg-2 col-6 footer-links">
+                <h4>Our Services</h4>
+                <ul>
+                  <li><i className="bi bi-chevron-right" /> <a href="#">Web Design</a></li>
+                  <li><i className="bi bi-chevron-right" /> <a href="#">Web Development</a></li>
+                  <li><i className="bi bi-chevron-right" /> <a href="#">Product Management</a></li>
+                  <li><i className="bi bi-chevron-right" /> <a href="#">Marketing</a></li>
+                  <li><i className="bi bi-chevron-right" /> <a href="#">Graphic Design</a></li>
+                </ul>
+              </div>
+              <div className="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+                <h4>Contact Us</h4>
+                <p>
+                  A108 Adam Street <br />
+                  New York, NY 535022<br />
+                  United States <br /><br />
+                  <strong>Phone:</strong> +1 5589 55488 55<br />
+                  <strong>Email:</strong> info@example.com<br />
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="container">
+          <div className="copyright">
+            © Copyright <strong><span>Protect Care</span></strong>. All Rights Reserved
+          </div>
+          <div className="credits">
+            {/* All the links in the footer should remain intact. */}
+            {/* You can delete the links only if you purchased the pro version. */}
+            {/* Licensing information: https://bootstrapmade.com/license/ */}
+            {/* Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/Protect Care-bootstrap-startup-template/ */}
+            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+          </div>
+        </div>
+      </footer>{/* End Footer */}
+    
+      <a href="#" className="back-to-top d-flex align-items-center justify-content-center"><i className="bi bi-arrow-up-short" /></a>
 
-    </>
+      <Helmet>
+        <script src="/assets/vendor/purecounter/purecounter.js" async></script>
+        <script src="/assets/vendor/aos/aos.js" async></script>
+        <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js" async></script>
+        <script src="/assets/vendor/glightbox/js/glightbox.min.js" async></script>
+        <script src="/assets/vendor/isotope-layout/isotope.pkgd.min.js" async></script>
+        <script src="/assets/vendor/swiper/swiper-bundle.min.js" async></script>
+        <script src="/assets/vendor/php-email-form/validate.js" async></script>
+        <script src="/assets/js/main.js" async></script>
+      </Helmet>
+    </Fragment>
   );
 }
 
